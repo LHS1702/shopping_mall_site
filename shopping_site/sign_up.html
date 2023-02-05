@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/eae775b921.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/top_button.css">
+    <script src="./js/jquery-3.6.1.min.js"></script>
+    <script src="./for_sign_up.js"></script>
+    <!-- <script>
+      $(function(){
+        
+        $('#ID').focus();
+        let id = []
+        let password = 5678;
+        
+        $('#ID').change(function(){
+          userId = $('#ID').val();
+        })
+        $('#password').change(function(){
+          userId = $('#password').val();
+        })
+        $('#password_confirm').change(function(){
+          userId = $('#password_confirm').val();
+        })
+
+
+
+
+        $('sign_up_btn').click(function(){
+          
+        })
+      })
+    </script> -->
+    <script>
+        $(function(){
+          
+          let user_id;
+          let idData = ['greencomputer','redcomputer','bluecomputer','yellowcomputer','blackcomputer']
+          
+          $('#ID').change(function(){
+            user_id = $('#ID').val()
+            
+          $('#for_confirm_exist_id').click(function(){
+            
+            let result = [];
+            for(let i=0; i<idData.length; i++) {
+              result.push(user_id==idData[i]);
+            }
+            if(result == 'false,false,false,false,false') {
+              alert('사용가능한 아이디입니다')
+            }
+            else {
+              alert('다른 사람이 이미 사용중인 아이디입니다. 다시 입력해주세요')
+            }
+          })
+        })
+      })
+    </script>
+</head>
+<style>
+  * {padding: 0; margin: 0;}
+    li {list-style: none;}
+
+  .for_center {
+    width: 600px; 
+    height: 2000px;
+    margin: 0 auto;
+    margin-top: 100px;
+    /* background-color: yellow; */
+  }
+  .for_center div:nth-child(1) {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .for_center div:nth-child(2) {
+    text-align: right;
+    margin-bottom: -30px;
+  }
+  .for_center div:nth-child(3), 
+  .for_center div:nth-child(4), 
+  .for_center div:nth-child(5) {
+    border-bottom: 1px solid black;
+    padding-bottom: 18px;
+    padding-left: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 40px;    
+  } 
+  .for_center div:nth-child(4) input, 
+  .for_center div:nth-child(5) input {
+    margin-left: 20px;
+    width: 230px;
+    height: 30px;
+    font-size: 18px;
+    border: none;
+  }
+  .for_center div:nth-child(3) input {
+    margin-left: 20px;
+    width: 150px;
+    height: 30px;
+    font-size: 18px;
+    border: none;
+    /* background-color: yellow; */
+  }
+  .for_center div:nth-child(3) input:focus, 
+  .for_center div:nth-child(4) input:focus, 
+  .for_center div:nth-child(5) input:focus {
+    outline: none;
+    color: black;
+  }
+  .for_center ::placeholder {
+    color: rgb(204, 204, 204);
+  }
+  #period_first, #period_second {
+     display: none;
+  }
+  .ID button {
+   float: right;
+   margin-right: 210px;
+   font-weight: normal;
+   border: 1px solid black;
+   margin-top: 2px;
+   font-size: 14px;
+   padding: 3px 8px;
+   background-color: rgb(230,230,230);
+   border-radius: 5px;
+  }
+  
+
+  .period {
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .choose_period {
+    height: 50px;
+    background-color: rgb(204, 204, 204);
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+  .choose_period label {
+    width: 296px;
+    height: 44px;
+    margin-top: 3px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+    color:rgb(102, 102, 102)
+  }
+  .choose_period label:nth-child(1) {
+    float: left;
+    margin-left: 3px;
+    
+  }
+  .choose_period label:nth-child(2) {
+    float: right;
+    margin-right: 3px;
+    
+  }
+  #period_first:checked ~.choose_period label:nth-child(1), 
+  #period_second:checked ~.choose_period label:nth-child(2) {
+    background-color: white;
+    color: black;
+  }
+  
+
+  .name {
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 40px;
+  }
+  .name input {
+    border: none;
+    font-size: 22px;
+    margin-left: 10px;
+  }
+  .name input:focus {
+    outline: none;
+    color: black;
+  }
+
+  .address {
+    border-bottom: 1px solid black;
+    padding-bottom: 40px;
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 40px;
+    /* background-color: yellow; */
+  }
+  .address input:nth-child(2) {
+    width: 80px;
+    height: 20px;
+    font-size: 15px;
+    margin-left: 30px;
+    text-align: center;
+    padding: 5px 0px;
+    border: 1px solid rgb(200,200,200);
+  }
+  .address p{
+    display: inline;
+    background-color: rgb(230,230,230);
+    width: 80px;
+    height: 20px;
+    font-size: 16px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    font-weight: normal;
+    border-radius: 3px;
+    margin-right: 300px;
+  }
+  .address input:nth-child(4),
+  .address input:nth-child(5) {
+    /* background-color: violet; */
+    margin-right: 400px;
+    width: 400px;
+    height: 30px;
+    margin-top: 8px;
+    font-size: 16px;
+    padding-left: 10px;
+    border: 1px solid rgb(200,200,200);
+  }
+  .address input:focus {
+    outline: none;
+  }
+
+  .email {
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 40px;
+    /* background-color: turquoise; */
+  }
+  .email select {
+    float: right;
+    font-size: 18px;
+    border: none;
+    /* background-color: yellow; */
+    margin-top: 10px;
+    color: rgb(102, 102, 102);
+  }
+  .email input {
+    border: none;
+    width: 380px;
+    /* background-color: violet; */
+    height: 40px;
+    font-size: 22px;
+  }
+  .email input:focus {
+    outline: none;
+    color: black;
+  }
+  
+  .phone {
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 40px;
+  }
+  .phone input {
+    border: none;
+    width: 360px;
+    height: 40px;
+    font-size: 22px;
+    /* background-color: yellow; */
+    margin-left: 10px;
+  }
+  .phone input:focus {
+    outline: none;
+    color: black;
+  }
+  .phone p {
+    float: right;
+    margin-right: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-top: 10px;
+  }
+
+  .SMS, .for_child {
+    margin-top: 30px;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 18px;
+  }
+  .SMS input, .for_child input {
+    float: left;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .parents {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  .sign_up_btn {
+    margin-top: 100px;
+    width: 100%;
+    height: 60px;
+    background-color: orange;
+    text-align: center;
+    border-radius: 20px;
+    line-height: 60px;
+    font-size: 20px;
+    color: white;
+    border: none;
+  }
+</style>
+<body>
+    <header class="header">
+        <a href="index.html"><img src="./images/logo.jpg"></a>
+        <ul>
+            <li><a href="login.html">로그인</a></li>
+            <li><a href="#">회원가입</a><div class="sign_up">5000p</div><i class="fa-solid fa-caret-up"></i></li>
+            <li><a href="#">마이페이지</a></li>
+            <li><a href="#">고객센터</a></li>
+        </ul>
+    </header>
+
+    <nav class="lnb">
+        <div class="lnb_line">
+
+            <div class="bar">
+                <i class="fa-solid fa-bars"></i>
+                <section class="hover_all_menu">
+                    <div class="for_menu_margin">
+                         <ul>
+                            <li>BEST</li>
+                            <li>반팔</li>
+                            <li>맨투맨</li>
+                            <li>반바지</li>
+                        </ul>
+                        <ul>
+                            <a href="./subpage.html"><li>한정세일</li></a>
+                            <li>상의</li>
+                            <li>하의</li>
+                        </ul>
+                        <ul>
+                          <li>프리미엄</li>
+                          <li>2~3만원대</li>
+                          <li>4~5만원대</li>
+                          <li>6~7만원대</li>
+                        </ul>
+                        <ul>
+                          <li>헬스나시</li>
+                          <li>와이드</li>
+                          <li>민소매</li>
+                          <li></li>
+                        </ul>
+                        <ul>
+                          <li>상의</li>
+                          <li>오버핏</li>
+                          <li>긴팔</li>
+                          <li>맨투맨/후드</li>
+                          <li>아우터</li>
+                        </ul>
+                        <ul>
+                          <li>하의</li>
+                          <li>반바지</li>
+                          <li>긴바지</li>
+                        </ul>
+                        <ul>
+                          <li>우먼</li>
+                          <li>상의</li>
+                          <li>하의</li>
+                        </ul>
+                        <ul>
+                          <li>운동용품</li>
+                          <li>양말</li>
+                          <li>보틀</li>
+                          <li>볼캡</li>
+                        </ul>
+                      </div>
+                    </section>
+                  </div>
+                  <ul class="lnb_list">
+                <div class="hot">HOT</div>
+                <li class="hover_menu">BEST
+                    <ul class="sub">
+                      <li>반팔</li>
+                      <li>맨투맨</li>
+                      <li>반바지</li>
+                    </ul>
+                  </li>
+                  <li class="hover_menu"><a href="./subpage.html">한정세일</a>
+                    <UL class="sub">
+                      <li>상의</li>
+                      <li>하의</li>
+                    </UL>
+                  </li>
+                  <li class="hover_menu">프리미엄
+                    <ul class="sub">
+                      <li>2~3만원대</li>
+                      <li>4~5만원대</li>
+                      <li>6~7만원대</li>
+                    </ul>
+                  </li>
+                  <li class="hover_menu">헬스나시
+                    <ul class="sub">
+                      <li>와이드</li>
+                      <li>민소매</li>
+                    </ul>
+                  </li>
+                  <li class="hover_menu">상의
+                    <ul class="sub">
+                      <li>반팔</li>
+                      <li>오버핏</li>
+                      <li>긴팔</li>
+                      <li>맨투맨/후드</li>
+                    </ul>
+                  </li>
+                  <li class="hover_menu">하의
+                    <ul class="sub">
+                      <li>반바지</li>
+                      <li>긴바지</li>
+                    </ul>
+                  </li>
+                 <li class="hover_menu">우먼
+                    <ul class="sub">
+                      <li>상의</li>
+                      <li>하의</li>
+                    </ul>
+                  </li>
+                  <li class="hover_menu">운동용품
+                    <ul class="sub">
+                      <li>양말</li>
+                      <li>보틀</li>
+                      <li>볼캡</li>
+                    </ul>
+                  </li>
+            </ul>
+            <div class="search_box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="bag">
+              <i class="fa-solid fa-bag-shopping"><p>0</p></i>
+            </div>
+        
+          </div>
+     </nav>
+
+     <div class="for_topbutton" id="for_topbutton"></div>
+
+     <section class="for_center">
+       <div>회원가입</div>
+
+       <div><span style="color:red">*</span> 필수입력</div>
+
+       <div class="ID"><span style="color:red">*</span> 아이디<input type="text" placeholder="6~20자 영문, 숫자" id="ID"><button id="for_confirm_exist_id">아이디 중복체크</button></div>
+
+       <div><span style="color:red">*</span> 비밀번호<input type="text" placeholder="8~12자 영문, 숫자, 특수문자" id="password"></div>
+       <div><span style="color:red">*</span> 비밀번호 확인<input type="text" placeholder="8~12자 영문, 숫자, 특수문자" id="password_confirm"></div>
+       
+       <div class="period">개인정보 유효기간</div>
+       
+       <input type="radio" id="period_first" name="until_period" checked>
+       <input type="radio" id="period_second" name="until_period">
+       <div class="choose_period">
+        <label for="period_first">탈퇴 시까지</label>
+        <label for="period_second">1년</label>
+        </div>
+        
+        <div style="margin-top:5px; color:rgb(153, 153, 153)">개인정보 유효기간 경과 이후 파기 또는 분리저장, 관리합니다.</div>
+
+        <div class="name"><span style="color:red">*</span> 이름<input type="text"></div>
+
+        <div class="address"><span style="color:red">*</span> 주소<input type="text" placeholder="우편번호"><p>주소검색</p>
+        <input type="text" placeholder="기본 주소">
+        <input type="text" placeholder="상세 주소">
+        </div>
+
+
+        <div class="email">이메일 <input type="text">
+        <select>
+          <option>직접입력</option>
+          <option>@naver.com</option>
+          <option>@hanmail.net</option>
+          <option>@gmail.com</option>
+          <option>@nate.com</option>
+        </select>
+        </div>
+
+        <div class="phone"><span style="color:red">*</span> 휴대폰<input type="text"><p>인증번호받기</p></div>
+
+        <div class="SMS">
+          <input type="checkbox"><p> SMS, 이메일로 상품 및 이벤트 정보를 받겠습니다.  (선택)</p>
+        </div>
+        <div class="for_child"><input type="checkbox"> 14세 미만입니다.</div>
+        
+        <div class="parents">만 14세 미만 회원은 법정대리인(부모님) 동의를 받은 경우만 회원가입이 가능합니다.</div>
+
+        <button class="sign_up_btn">가입하기</button>
+      </section>
+      
+      
+      
+      <section class="for_footer_margin">
+    <footer class="footer">
+      <div class="logo_line">
+        <img src="./images/footer_logo.JPG">
+        <ul>
+          <li>회사소개</li>
+          <li>이용약관</li>
+                <li>개인정보처리방침</li>
+                <li>이용안내</li>
+            </ul>
+        </div>
+        <p class="phone_number">T.070-4024-2767  월~금 10:00~17:00 점심시간 12:30 ~ 13:30 주말/공휴일 OFF</p>
+        <section class="dark_text">
+            <div class="left_text">
+                <p>COMPANY : HUGVONE | OWNER:이승민,전용우 | ADDRESS : 47361 부산광역시 부산진구 범일로154번길 33 (범천동) 범일역풍림아이원 2층 허그본</p>
+                <p>사업자 등록번호 | 740-52-00373 <span>[사업자정보확인]</span> | 통신판매업 신고번호 | 2019-부산부산진-0408 | 개인정보관리책임자 : <span>허그본 (hugvone@hugvone.co.kr)</span></p>
+                <p>고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 PG 사의 구매안전서비스를 이용하실 수 있습니다. LG U+ 에스크로<span>[서비스가입사실확인]</span></p>
+            </div>
+            <div class="right_img">
+                <img src="./images/escrow_inicis.png">
+                <img src="./images/support_privacy.png">
+                 <img src="./images/support_ftc.png">
+                 <img src="./images/support_ssl_glob.png">
+            </div>
+            <div class="footer_last_text"><p>COPYRIGHT BY HUGVONE. ALL RIGHTS RESERVED. HOSTING BY 카페24(주)</p> <p>HOSTING CAFE24 | DESIGNED BY <span class="dfloor">DFLOOR</span></p></div>
+        </section>
+    </footer>
+    </section>
+
+    <div class="top_button">
+        <div>
+            <img src="./images/카톡.JPG">
+        </div>
+
+        <a href="#for_topbutton"><div>
+            <i class="fa-solid fa-chevron-up"></i>
+        </div>
+        </a>
+    </div>
+
+   
+</body>
+</html>

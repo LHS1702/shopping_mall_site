@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/eae775b921.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/top_button.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+</head>
+<style>
+
+     .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .visual_main {
+        width: 1245px; 
+        height: 700px;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+    .visual_main div.swiper-button-prev {
+        background-image: url(./images/visual_main_left.png);
+        width: 80px;
+        height: 80px;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .visual_main div.swiper-button-prev::after {
+        display: none;
+    }
+    .visual_main div.swiper-button-next {
+        background-image: url(./images/visual_main_right.png);
+        width: 80px;
+        height: 80px;
+        background-size: contain;
+    }
+    .visual_main div.swiper-button-next::after {
+        display: none;
+    }
+    .visual_main span.swiper-pagination-bullet {
+        background-color: #737373;
+        width: 15px;
+        height: 15px;
+    }
+    /* 바로 위 bullet으로 margin이 적용 안됨 */
+    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0 10px;
+    }
+    .visual_main span.swiper-pagination-bullet-active {
+        background-color: white;
+    }
+    /* .visual_main ul {
+        width: 6225px; height: 700px;
+        position: absolute;
+        top: 0; left: 0;
+        animation-name: banner;
+        animation-duration: 12s;
+        animation-iteration-count: infinite;
+    }
+    .visual_main ul li {
+        float: left;
+    } */
+    @keyframes banner {
+            0% {left: 0;}
+            20% {left: 0;}
+            25% {left: -1245px;}
+            45% {left: -1245px;}
+            50% {left: -2490px;}
+            70% {left: -2490px;}
+            75% {left: -3735px;}
+            95% {left: -3735px;}
+            100% {left: -4980px;}  }
+
+    .weekly_best {
+        width: 1245px; height: 30px;
+        margin: 0 auto;
+        text-align: center;
+        /* background-color: yellow; */
+        margin-top: 100px;
+        font-size: 30px;
+    }
+    
+    .product_picture {
+        width: 1245px; 
+        margin: 0 auto;
+        /* background-color: yellow; */
+        margin-top: 100px;
+        overflow: hidden;
+    }
+    .category {
+        width: 640px; height: 30px;
+        margin: 0 auto;
+        /* background-color: aqua; */
+    
+    }
+    .category label {
+        margin-right: 60px;
+        font-size: 20px;
+        float: left;
+        width: 80px;
+        height: 30px;
+        /* background-color: violet; */
+        text-align: center;
+
+    }
+    .category label:nth-child(5) {
+        margin-right: 0px;
+    }
+    #rad1, #rad2, #rad3, #rad4, #rad5 {
+        display: none;
+    }
+    #rad1:checked ~.all {
+        display: block;
+    }
+    #rad1:checked ~.category label:nth-child(1){
+       color: darkorange;
+       font-weight: bold;
+    }
+    #rad2:checked ~.top {
+        display: block;
+    }
+    #rad2:checked ~.category label:nth-child(2){
+       color: darkorange;
+       font-weight: bold;
+    }
+     #rad3:checked ~.pants {
+        display: block;
+    }
+    #rad3:checked ~.category label:nth-child(3){
+       color: darkorange;
+       font-weight: bold;
+    }
+     #rad4:checked ~.women {
+        display: block;
+    }
+    #rad4:checked ~.category label:nth-child(4){
+       color: darkorange;
+       font-weight: bold;
+    }
+     #rad5:checked ~.premium {
+        display: block;
+    }
+    #rad5:checked ~.category label:nth-child(5){
+       color: darkorange;
+       font-weight: bold;
+    }
+    .all, .top, .pants, .women, .premium {
+        display: none;
+    }
+
+    label:hover {
+        color: #ccc;
+    }
+    .model {
+        width: 1245px; 
+        /* background-color: orange; */
+        margin-top: 50px;
+        /* overflow: hidden; */
+    }
+    .line {
+        width: 1245px; height: 600px;
+        /* background-color: dodgerblue; */
+    }
+    .wearing_pose {
+        width: 300px; height: 600px;
+        /* background-color: mediumseagreen; */
+        position: relative;
+        margin-right: 15px;
+        float: left;
+    }
+    .line .wearing_pose:nth-child(4) {
+        margin-right: 0px;
+    }
+    .wearing_pose img:nth-child(2) {
+        position: absolute;
+        top: 0px; left: 0px;
+        opacity: 0;
+        transition: all 0.5s;
+    } 
+    .wearing_pose:hover img:nth-child(2) {
+        opacity: 1;
+    }
+    .women .for_hover_overflow, .premium .for_hover_overflow {
+       width: 300px; height: 400px;
+       overflow: hidden;
+    }
+    .women .wearing_pose img, .premium .wearing_pose img {
+        transition: all 0.2s;
+    }
+    .women .wearing_pose:hover img, .premium .wearing_pose:hover img {
+        transform: scale(1.12);
+    }
+    .product_name {
+        width: 300px; height:50px;
+        /* background-color: yellow; */
+        padding-top: 18px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #ccc;
+        font-weight: bold;
+    }
+    .price {
+        width: 300px; height: 30px;
+        /* background-color: violet; */
+        padding-top: 10px;
+        box-sizing: border-box;
+    }
+
+
+    .MD_PICK {
+        width: 1245px; 
+        height: 550px;
+        background-color: #122228;
+        margin: 0 auto;
+        margin-top: 100px;
+        }
+    .MD_PICK .text_MD {
+        /* background-color: violet; */
+        font-weight: bold;
+        font-size: 30px;
+        color: white;
+        padding-top:10px;
+        margin-left: 20px;
+        padding-bottom: 10px;
+    }
+    .MD_PICK .MD_PICK_MODEL {
+        width: 300px; height: 400px;
+        margin-right: 15px;
+        /* background-color: yellow; */
+        float: left;
+        position: relative;
+    }
+    .MD_PICK .MD_PICK_MODEL img {
+        width: 100%; height: 100%;
+    }
+    .MD_PICK_MODEL:hover 
+    .hover_information {
+        opacity: 1;
+     transition: all 0.3s;
+
+    }
+    .MD_PICK_MODEL:hover .for_dark{
+        opacity:0.6;
+        transition: all 0.3s;
+    }
+    .hover_information {
+        position: absolute;
+        width: 300px; height: 300px;
+        top: 0; left: 0;
+        transition: all 0.3s;
+        z-index: 4;
+        opacity: 0;
+    }
+    .for_dark {
+        position: absolute;
+        top: 0; left: 0;
+        width: 300px; height: 400px;
+        z-index: 1;
+        background-color: black;
+        opacity: 0;
+    }
+    .hover_information p {
+        text-align: center;
+        color:white;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    .hover_information p:nth-child(1) {
+        margin-top: 160px;
+    } 
+    .hover_information p:nth-child(2) {
+        margin-top: 10px;
+    }
+    .visible_box {
+        overflow-y: hidden;
+        overflow-x: scroll;
+        height: 450px;
+    }
+    .visible_box::-webkit-scrollbar {
+        background-color: #7a7a7a;
+        border-radius: 10px;
+        height: 15px;
+    }
+    .visible_box::-webkit-scrollbar-thumb {
+        background-color: white;
+        border-radius: 10px;
+    }
+    
+
+    .MD_PICK .MDPICK_scroll {
+        width: 2190px;
+        height: 500px;
+        /* background-color: yellow; */
+    }
+
+    .MD_PICK .MDPICK_scroll div:last-child {
+        margin-right: 0px;
+    }
+
+
+    .youtube {
+        margin: 0 auto;
+       margin-top: 150px;
+       width: 1245px;height: 1000px;
+    }
+
+    .review {
+        width: 1245px;
+        margin: 0 auto;
+        text-align: center;
+        /* background-color: yellow; */
+        margin-top: 150px;
+        margin-bottom: 30px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .review_picture {
+        width: 1245px;
+        margin: 0 auto;
+    }
+    .review_picture ul {
+        width: 1245px; height: 245px;
+        margin-bottom: 5px;
+    }
+    .review_picture ul li {
+        float: left;
+        margin-right: 5px;
+    }
+    .review_picture ul li:nth-child(5) {
+        margin-right: 0px;
+    } 
+
+    .for_event_margin {
+        width: 100%;
+        background-color: rgb(244, 244, 244);
+    }
+    .event {
+        width: 1245px;height: 700px;
+        /* background-color: violet; */
+        margin: 0 auto;
+        margin-top: 100px;
+        /* background-color: rgb(244, 244, 244); */
+    }
+    .event>p {
+        /* background-color: yellow; */
+        text-align: center;
+        padding-top: 50px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .event_line {
+        margin-top: 300px;
+        width: 1245px; height: 470px;
+        /* background-color: violet; */
+        margin: 0 auto;
+        box-sizing: border-box;
+        margin-top: 50px;
+    }
+    .event_line div:nth-child(1) {
+        margin-right: 15px;
+    }
+    .event_picture {
+        width: 615px; height: 430px;
+        float: left;
+    }
+    .img_size {
+        width: 615px; height: 430px;
+    }
+    .event_picture img {
+        width: 100%; height: 100%;
+    }
+    .event_picture p {
+        margin-top: 20px;
+        text-align: center;
+        /* background-color: yellow; */
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .popup {
+        width: 400px;
+        height: 418px;
+        position: absolute;
+        top: 200px;
+        left: 400px;
+        background-color:black;
+        z-index: 10;
+    }
+    .popup img {
+        width: 100%;
+    }
+    #popup {
+        display: none;
+    }
+    .popup p {
+        float: right; font-size: 12px;
+        color: white;
+        margin-right: 5px;
+    }
+    #popup:checked ~.popup {
+        display: none;
+    }
+
+     .hover_menu .sub {
+        display: none;
+        margin-left: -15px;
+        position: relative;
+        z-index: 30;
+        margin-top: 13px;
+    }
+   
+</style>
+<body>
+    <header class="header">
+        <a href="index.html"><img src="./images/logo.jpg"></a>
+        <ul>
+            <li><a href="login.html">로그인</a></li>
+            <li><a href="sign_up.html">회원가입</a><div class="sign_up">5000p</div><i class="fa-solid fa-caret-up"></i></li>
+            <li><a href="#">마이페이지</a></li>
+            <li><a href="#">고객센터</a></li>
+        </ul>
+    </header>
+
+    <nav class="lnb">
+        <div class="lnb_line">
+
+            <div class="bar">
+                <i class="fa-solid fa-bars"></i>
+                <section class="hover_all_menu">
+                    <div class="for_menu_margin">
+                        <ul>
+                            <li>BEST</li>
+                            <li>반팔</li>
+                            <li>맨투맨</li>
+                            <li>반바지</li>
+                        </ul>
+                        <ul>
+                            <a href="./subpage.html"><li>한정세일</li></a>
+                            <li>상의</li>
+                            <li>하의</li>
+                        </ul>
+                        <ul>
+                            <li>프리미엄</li>
+                            <li>2~3만원대</li>
+                            <li>4~5만원대</li>
+                            <li>6~7만원대</li>
+                        </ul>
+                        <ul>
+                            <li>헬스나시</li>
+                            <li>와이드</li>
+                            <li>민소매</li>
+                        </ul>
+                        <ul>
+                            <li>상의</li>
+                            <li>오버핏</li>
+                            <li>긴팔</li>
+                            <li>맨투맨/후드</li>
+                            <li>아우터</li>
+                        </ul>
+                        <ul>
+                            <li>하의</li>
+                            <li>반바지</li>
+                            <li>긴바지</li>
+                        </ul>
+                        <ul>
+                            <li>우먼</li>
+                            <li>상의</li>
+                            <li>하의</li>
+                        </ul>
+                        <ul>
+                            <li>운동용품</li>
+                            <li>양말</li>
+                            <li>보틀</li>
+                            <li>볼캡</li>
+                        </ul>
+                
+                    </div>
+                </section>
+            </div>
+            <ul class="lnb_list">
+                <div class="hot">HOT</div>
+                <li class="hover_menu">BEST
+                    <ul class="sub">
+                        <li>반팔</li>
+                        <li>맨투맨</li>
+                        <li>반바지</li>
+                    </ul>
+                </li>
+                <li class="hover_menu"><a href="./subpage.html">한정세일</a>
+                    <UL class="sub">
+                        <li>상의</li>
+                        <li>하의</li>
+                    </UL>
+                </li>
+                <li class="hover_menu">프리미엄
+                    <ul class="sub">
+                        <li>2~3만원대</li>
+                        <li>4~5만원대</li>
+                        <li>6~7만원대</li>
+                    </ul>
+                </li>
+                <li class="hover_menu">헬스나시
+                    <ul class="sub">
+                        <li>와이드</li>
+                        <li>민소매</li>
+                    </ul>
+                </li>
+                <li class="hover_menu">상의
+                    <ul class="sub">
+                        <li>반팔</li>
+                        <li>오버핏</li>
+                        <li>긴팔</li>
+                        <li>맨투맨/후드</li>
+                    </ul>
+                </li>
+                <li class="hover_menu">하의
+                    <ul class="sub">
+                        <li>반바지</li>
+                        <li>긴바지</li>
+                    </ul>
+                </li>
+                <li class="hover_menu">우먼
+                    <ul class="sub">
+                        <li>상의</li>
+                        <li>하의</li>
+                    </ul>
+                </li>
+                <li class="hover_menu">운동용품
+                    <ul class="sub">
+                        <li>양말</li>
+                        <li>보틀</li>
+                        <li>볼캡</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="search_box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="bag">
+                <i class="fa-solid fa-bag-shopping"><p>0</p></i>
+            </div>
+        
+        </div>
+    </nav>
+    
+    <div class="for_topbutton" id="for_topbutton"></div>
+
+    <div class="visual_main" id="top">
+        <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="./images/main_visual1.jpg"></div>
+        <div class="swiper-slide"><img src="./images/main_visual2.jpg"></div>
+        <div class="swiper-slide"><img src="./images/main_visual3.jpg"></div>
+        <div class="swiper-slide"><img src="./images/main_visual4.jpg"></div>
+        <div class="swiper-slide"><img src="./images/main_visual5.jpg"></div>
+        <div class="swiper-slide"><img src="./images/main_visual6.jpg"></div>
+        <div class="swiper-slide"><img src="./images/main_visual7.jpg"></div>
+        <div class="swiper-slide"><img src="./images/main_visual8.jpg"></div>
+        
+       
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+        <!-- <ul>
+            <li><img src="./images/main_visual1.jpg"></li>
+            <li><img src="./images/main_visual2.jpg"></li>
+            <li><img src="./images/main_visual3.jpg"></li>
+             <li><img src="./images/main_visual4.jpg"></li>
+            <li><img src="./images/main_visual1.jpg"></li>
+        </ul> -->
+    </div>
+     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        },
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+      });
+    </script>
+
+    <p class="weekly_best">WEEKLY BEST</p>
+
+    <section class="product_picture">
+        <input type="radio" name="product" id="rad1" checked>
+        <input type="radio" name="product" id="rad2">
+        <input type="radio" name="product" id="rad3">
+        <input type="radio" name="product" id="rad4">
+        <input type="radio" name="product" id="rad5">
+
+        <div class="category">
+        <label for="rad1">전체</label>
+        <label for="rad2">상의</label>
+        <label for="rad3">하의</label>
+        <label for="rad4">우먼</label>
+        <label for="rad5">프리미엄</label>
+        </div>
+        <section class="all">
+       <section class="model">
+        <div class="line">
+            <div class="wearing_pose">
+                <img src="./images/Untitled-24.jpg">
+                <img src="./images/Untitled-23.jpg">
+                <p class="product_name">써클 오버핏후드 [블랙]</p>
+                <p class="price">65,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/Untitled-22.jpg">
+                <img src="./images/Untitled-21.jpg">
+                <p class="product_name">써클 오버핏후드 [크림]</p>
+                <p class="price">65,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/Untitled-20.jpg">
+                <img src="./images/Untitled-19.jpg">
+                <p class="product_name">써클 오버핏후드 [블랙]</p>
+                <p class="price">65,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/Untitled-18.jpg">
+                <img src="./images/Untitled-1.jpg">
+                <p class="product_name">써클 오버핏후드 [블랙]</p>
+                <p class="price">65,000원</p>
+            </div>
+        </div>
+        <div class="line">
+            <div class="wearing_pose">
+                <img src="./images/Untitled-17.jpg">
+                <img src="./images/Untitled-16.jpg">
+                <p class="product_name">헤비웨이트 오버핏 반팔 [블랙]</p>
+                <p class="price">32,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/Untitled-11.jpg">
+                <img src="./images/Untitled-10.jpg">
+                <p class="product_name">헤비웨이트 오버핏 반팔</p>
+                <p class="price">32,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/Untitled-15.jpg">
+                <img src="./images/Untitled-14.jpg">
+                <p class="product_name">써클 오버핏후드 [화이트]</p>
+                <p class="price">32,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/Untitled-12.jpg">
+                <img src="./images/Untitled-13.jpg">
+                <p class="product_name">써클 오버핏후드 [카키]</p>
+                <p class="price">32,000원</p>
+            </div>
+        </div>
+        <div class="line">
+            <div class="wearing_pose">
+                <img src="./images/Untitled-8.jpg">
+                <img src="./images/Untitled-9.jpg">
+                <p class="product_name">모달스판 레터링오버핏반팔[화이트]</p>
+                <p class="price">32,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/Untitled-3.jpg">
+                <img src="./images/Untitled-2.jpg">
+                <p class="product_name">모달스판 레터링오버핏반팔[블랙]</p>
+                <p class="price">32,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/Untitled-7.jpg">
+                <img src="./images/Untitled-6.jpg">
+                <p class="product_name">모달스판 라인오버핏반팔[베이지]</p>
+                <p class="price">32,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/Untitled-5.jpg">
+                <img src="./images/Untitled-4.jpg">
+                <p class="product_name">모달스판 라인오버핏반팔[카키]</p>
+                <p class="price">32,000원</p>
+            </div>
+        </div>
+       </section>
+       </section>
+
+       <section class="top">
+        <section class="model">
+        <div class="line">
+            <div class="wearing_pose">
+                <img src="./images/상의/상의1.jpg">
+                <img src="./images/상의/상의1-1.jpg">
+                <p class="product_name">심플포인트 오버핏긴팔 [화이트]</p>
+                <p class="price">36,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/상의/상의2.jpg">
+                <img src="./images/상의/상의2-1.jpg">
+                <p class="product_name">오버핏긴팔 [화이트]</p>
+                <p class="price">38,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/상의/상의3.jpg">
+                <img src="./images/상의/상의3-1.jpg">
+                <p class="product_name">머슬 U넥 오버핏긴팔</p>
+                <p class="price">28,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/상의/상의4.jpg">
+                <img src="./images/상의/상의4-1.jpg">
+                <p class="product_name">노멀 머슬핏 반팔</p>
+                <p class="price">32,000원</p>
+            </div>
+        </div>
+        <div class="line">
+            <div class="wearing_pose">
+                <img src="./images/상의/상의5.jpg">
+                <img src="./images/상의/상의5-1.jpg">
+                <p class="product_name">오버핏 긴팔</p>
+                <p class="price">36,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/상의/상의6.jpg">
+                <img src="./images/상의/상의6-1.jpg">
+                <p class="product_name">오버핏 맨투맨 [피그먼트차콜]</p>
+                <p class="price">55,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/상의/상의7.jpg">
+                <img src="./images/상의/상의7-1.jpg">
+                <p class="product_name">오버핏 반팔 [블랙]</p>
+                <p class="price">25,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/상의/상의8.jpg">
+                <img src="./images/상의/상의8-1.jpg">
+                <p class="product_name">심플포인트 오버핏긴팔 [인디블루]</p>
+                <p class="price">36,000원</p>
+            </div>
+        </div>
+        <div class="line">
+            <div class="wearing_pose">
+                <img src="./images/상의/상의9.jpg">
+                <img src="./images/상의/상의9-1.jpg">
+                <p class="product_name">오버핏 맨투맨 [블랙]</p>
+                <p class="price">55,000원</p>
+            </div>
+            <div class="wearing_pose">
+               <img src="./images/상의/상의10.jpg">
+                <img src="./images/상의/상의10-1.jpg">
+                <p class="product_name">오버핏 맨투맨 [피그먼트카키]</p>
+                <p class="price">55,000원</p>
+            </div>
+        </div>
+       </section>
+       </section>
+
+       <section class="pants">
+        <section class="model">
+        <div class="line">
+            <div class="wearing_pose">
+                <img src="./images/하의/하의1.jpg">
+                <img src="./images/하의/하의1-1.jpg">
+                <p class="product_name">절개 조거팬츠 [피그먼트카키]</p>
+                <p class="price">48,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/하의/하의2.jpg">
+                <img src="./images/하의/하의2-1.jpg">
+                <p class="product_name">절개 조거팬츠 [그레이]</p>
+                <p class="price">48,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/하의/하의3.jpg">
+                <img src="./images/하의/하의3-1.jpg">
+                <p class="product_name">절개 조거팬츠 [크림]</p>
+                <p class="price">28,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/하의/하의4.jpg">
+                <img src="./images/하의/하의4-1.jpg">
+                <p class="product_name">와이드 조거팬츠 [화이트]</p>
+                <p class="price">42,000원</p>
+            </div>
+        </div>
+        <div class="line">
+            <div class="wearing_pose">
+                <img src="./images/하의/하의5.jpg">
+                <img src="./images/하의/하의5-1.jpg">
+                <p class="product_name">와이드 조거팬츠 [블랙]</p>
+                <p class="price">42,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/하의/하의6.jpg">
+                <img src="./images/하의/하의6-1.jpg">
+                <p class="product_name">아이스 슬림 조깅스팬츠 [네이비]</p>
+                <p class="price">39,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/하의/하의7.jpg">
+                <img src="./images/하의/하의7-1.jpg">
+                <p class="product_name">절개 조거팬츠</p>
+                <p class="price">48,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <img src="./images/하의/하의9.jpg">
+                <img src="./images/하의/하의9-1.jpg">
+                <p class="product_name">아이스 슬림 조깅스팬츠 [차콜]</p>
+                <p class="price">39,000원</p>
+            </div>
+        </div>
+       </section>
+       </section>
+
+       <section class="women">
+        <section class="model">
+        <div class="line">
+            <div class="wearing_pose">
+                <div class="for_hover_overflow"><img src="./images/우먼/우먼1.jpg"></div>
+                <p class="product_name">플로우 머슬핏 크롭나시</p>
+                <p class="price">16,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <div class="for_hover_overflow"><img src="./images/우먼/우먼2.jpg"></div>
+                <p class="product_name">무지 머슬핏 크롭반팔</p>
+                <p class="price">16,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <div class="for_hover_overflow"><img src="./images/우먼/우먼3.jpg"></div>
+                <p class="product_name">플로우 머슬핏 크롭반팔</p>
+                <p class="price">16,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <div class="for_hover_overflow"><img src="./images/우먼/우먼4.jpg"></div>
+                <p class="product_name">플로우 머슬핏 반팔</p>
+                <p class="price">17,000원</p>
+            </div>
+        </div>
+        <div class="line">
+            <div class="wearing_pose">
+                <div class="for_hover_overflow"><img src="./images/우먼/우먼5.jpg"></div>
+                <p class="product_name">무지 머슬핏 크롭나시</p>
+                <p class="price">16,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <div class="for_hover_overflow"><img src="./images/우먼/우먼6.jpg"></div>
+                <p class="product_name">무지 머슬핏 반팔</p>
+                <p class="price">39,000원</p>
+            </div>
+        </div>
+       </section>
+       </section>
+
+       <section class="premium">
+        <section class="model">
+        <div class="line">
+            <div class="wearing_pose">
+                <div class="for_hover_overflow"><img src="./images/프리미엄/프리미엄1.jpg"></div>
+                <p class="product_name">지오메탈 머슬핏 반팔 2컬러</p>
+                <p class="price">37,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <div class="for_hover_overflow"><img src="./images/프리미엄/프리미엄2.jpg"></div>
+                <p class="product_name">액티브골드 머슬핏 반팔 2컬러</p>
+                <p class="price">38,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <div class="for_hover_overflow"><img src="./images/프리미엄/프리미엄3.jpg"></div>
+                <p class="product_name">모달 크라운 머슬핏 반팔 4컬러</p>
+                <p class="price">31,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <div class="for_hover_overflow"><img src="./images/프리미엄/프리미엄4.jpg"></div>
+                <p class="product_name">모달 클래식 머슬핏 반팔 4컬러</p>
+                <p class="price">31,000원</p>
+            </div>
+        </div>
+        <div class="line">
+            <div class="wearing_pose">
+                <div class="for_hover_overflow"><img src="./images/프리미엄/프리미엄5.jpg"></div>
+                <p class="product_name">모달 스몰로고 HVN 머슬핏 반팔 4컬러</p>
+                <p class="price">31,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <div class="for_hover_overflow"><img src="./images/프리미엄/프리미엄6.jpg"></div>
+                <p class="product_name">모달 빅로고 HVN 머슬핏 반팔 4컬러</p>
+                <p class="price">55,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <div class="for_hover_overflow"><img src="./images/프리미엄/프리미엄7.jpg"></div>
+                <p class="product_name">클래식 지오메탈 머슬핏 반팔 2컬러</p>
+                <p class="price">37,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <div class="for_hover_overflow"><img src="./images/프리미엄/프리미엄8.jpg"></div>
+                <p class="product_name">HV 지오메탈 머슬핏 반팔 2컬러</p>
+                <p class="price">34,000원</p>
+            </div>
+        </div>
+        <div class="line">
+            <div class="wearing_pose">
+                <div class="for_hover_overflow"><img src="./images/프리미엄/프리미엄9.jpg"></div>
+                <p class="product_name">HGVN 액티브골드 머슬핏 반팔 2컬러</p>
+                <p class="price">33,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <div class="for_hover_overflow"><img src="./images/프리미엄/프리미엄10.jpg"></div>
+                <p class="product_name">HGVN 머슬핏 반팔 4컬러</p>
+                <p class="price">31,000원</p>
+            </div>
+            <div class="wearing_pose">
+                <div class="for_hover_overflow"><img src="./images/프리미엄/프리미엄11.jpg"></div>
+                <p class="product_name">빅로고 HVN 액티브골드 머슬핏 반팔 2컬러</p>
+                <p class="price">35,000원</p>
+            </div>
+        </div>
+       </section>
+       </section>
+
+    </section>
+    
+    <section class="MD_PICK">
+        <p class="text_MD">MD PICK</p>
+        <div class="visible_box">
+                <div class="MDPICK_scroll">
+        <div class="MD_PICK_MODEL">
+            <img src="./images/MD PICK1.jpg">
+            <div class="hover_information">
+                <p>무지 머슬핏 반팔</p>
+                <p>18,000원</p>
+            </div>
+            <div class="for_dark"></div>
+        </div>
+        <div class="MD_PICK_MODEL">
+            <img src="./images/MD PICK2.jpg">
+            <div class="hover_information">
+                <p>트랙라인 자켓</p>
+                <p>74,000원</p>
+            </div>
+            <div class="for_dark"></div>
+        </div>
+        <div class="MD_PICK_MODEL">
+            <img src="./images/MD PICK3.jpg">
+            <div class="hover_information">
+                <p>빅로고 오버핏 반팔</p>
+                <p>24,000원</p>
+            </div>
+            <div class="for_dark"></div>
+        </div>
+        <div class="MD_PICK_MODEL">
+            <img src="./images/MD PICK4.jpg">
+            <div class="hover_information">
+                <p>드라이 숏팬츠 블랙</p>
+                <p>23,000원</p>
+            </div>
+            <div class="for_dark"></div>
+        </div>
+        <div class="MD_PICK_MODEL">
+            <img src="./images/MD_PICK5.jpg">
+            <div class="hover_information">
+                <p>허그본 데일리 오버핏 반팔 3컬러</p>
+                <p>22,000원</p>
+            </div>
+            <div class="for_dark"></div>
+        </div>
+        <div class="MD_PICK_MODEL">
+            <img src="./images/MD_PICK6.jpg">
+            <div class="hover_information">
+                <p>드라이 머슬핏 티셔츠 화이트,카키</p>
+                <p>17,000원</p>
+            </div>
+            <div class="for_dark"></div>
+        </div>
+        <div class="MD_PICK_MODEL">
+            <img src="./images/MD_PICK7.jpg">
+            <div class="hover_information">
+                <p>드라이 오버핏 티셔츠 화이트 베이지,카키 </p>
+                <p>23,000원</p>
+            </div>
+            <div class="for_dark"></div>
+        </div>
+        </div>
+        </div>
+
+        
+    </section>
+
+
+    <section class="youtube">
+        <iframe width="1245" height="1000" src="https://www.youtube.com/embed/c5w_rUo8RLk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+
+    <p class="review">리얼리뷰</p>
+    <section class="review_picture">
+        <ul>
+            <li><img src="./images/review1.jpg"></li>
+            <li><img src="./images/review2.jpg"></li>
+            <li><img src="./images/review3.jpg"></li>
+            <li><img src="./images/review4.jpg"></li>
+            <li><img src="./images/review5.jpg"></li>
+        </ul>
+        <ul>
+            <li><img src="./images/review6.jpg"></li>
+            <li><img src="./images/review7.jpg"></li>
+            <li><img src="./images/review8.jpg"></li>
+            <li><img src="./images/review9.jpg"></li>
+            <li><img src="./images/review10.jpg"></li>
+        </ul>
+    </section>
+
+
+    <section class="for_event_margin">
+    <div class="event">
+        <p>허그본 이벤트</p>
+        <div class="event_line">
+
+        <div class="event_picture">
+            <div class="img_size"><img src="./images/event.jpg"></div>
+            <p></p>
+        </div>
+        <div class="event_picture">
+            <div class="img_size"><img src="./images/리뷰이벤트.jpg"></div>
+            <p></p>
+        </div>
+
+        </div>
+    </div>
+    </section>
+
+    
+
+<section class="for_footer_margin">
+    <footer class="footer">
+        <div class="logo_line">
+            <img src="./images/footer_logo.JPG">
+            <ul>
+                <li>회사소개</li>
+                <li>이용약관</li>
+                <li>개인정보처리방침</li>
+                <li>이용안내</li>
+            </ul>
+        </div>
+        <p class="phone_number">T.070-4024-2767  월~금 10:00~17:00 점심시간 12:30 ~ 13:30 주말/공휴일 OFF</p>
+        <section class="dark_text">
+            <div class="left_text">
+                <p>COMPANY : HUGVONE | OWNER:이승민,전용우 | ADDRESS : 47361 부산광역시 부산진구 범일로154번길 33 (범천동) 범일역풍림아이원 2층 허그본</p>
+                <p>사업자 등록번호 | 740-52-00373 <span>[사업자정보확인]</span> | 통신판매업 신고번호 | 2019-부산부산진-0408 | 개인정보관리책임자 : <span>허그본 (hugvone@hugvone.co.kr)</span></p>
+                <p>고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 PG 사의 구매안전서비스를 이용하실 수 있습니다. LG U+ 에스크로<span>[서비스가입사실확인]</span></p>
+            </div>
+            <div class="right_img">
+                <img src="./images/escrow_inicis.png">
+                <img src="./images/support_privacy.png">
+                 <img src="./images/support_ftc.png">
+                 <img src="./images/support_ssl_glob.png">
+            </div>
+            <div class="footer_last_text"><p>COPYRIGHT BY HUGVONE. ALL RIGHTS RESERVED. HOSTING BY 카페24(주)</p> <p>HOSTING CAFE24 | DESIGNED BY <span class="dfloor">DFLOOR</span></p></div>
+        </section>
+    </footer>
+    </section>
+
+    <div class="top_button">
+        <div>
+            <img src="./images/카톡.JPG">
+        </div>
+
+        <a href="#for_topbutton"><div>
+            <i class="fa-solid fa-chevron-up"></i>
+        </div></a>
+    </div>
+
+    <input type="checkbox" id="popup">
+    <div class="popup">
+        <img src="./images/허그본팝업.jpg">
+        <label for="popup"><p>닫기 X</p></label>
+    </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+.for_footer_margin {
+    width: 100%;
+    background-color: black;
+}
+.footer {
+        width: 1245px; height: 350px;
+        margin: 0 auto;
+        /* background-color: black; */
+        padding-top: 70px;
+        padding-bottom: 30px;
+    }
+    .logo_line {
+        height: 80px;
+        padding: 30px 0px;
+        /* background-color: violet;/ */
+        box-sizing: border-box;
+    }
+    .logo_line img {
+      width: 240px;
+      float: left;
+      margin-left: 10px;
+    }
+    .logo_line ul {
+        float: left;
+        margin-left: 50px;
+        /* background-color: yellow; */
+    }
+    .logo_line ul li {
+        color: white;
+        font-weight: bold;
+        line-height: 40px;
+        float: left;
+        margin-right: 20px;
+    }
+    .phone_number {
+        margin-top: 30px;
+        color: white;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+    .dark_text {
+        width: 1245px; height: 130px;
+        /* background-color: yellow; */
+        float: left;
+    }
+    .left_text {
+        width: 950px; height: 100px;
+        float: left;
+       
+    }
+    .left_text p {
+        font-size: 12px;
+        margin-left: 10px;
+        color: #ccc;
+        margin-bottom: 12px;
+    }
+    .left_text p:nth-child(1) {
+        padding-top: 20px;
+    }
+    .left_text span {
+        font-weight: bold;
+        color: white;
+    }
+    .right_img {
+        width: 290px; height: 100px;
+        /* background-color: violet; */
+        float: right;
+    }
+    .right_img img {
+        float: left;
+        margin-right: 5px;
+    }
+    .right_img img:nth-child(1) {
+        float: right;
+        padding-bottom: 20px;
+    }
+    .footer_last_text {
+        height: 50px;
+        float: left;
+        margin-top: 40px;
+    }
+    .footer_last_text p {
+        float: left;
+    }
+    .footer_last_text p:nth-child(1) {
+        font-size: 14px;
+        color: #ccc;
+        margin-left: 10px;
+    }
+    .footer_last_text p:nth-child(2) {
+        margin-top: 5px;
+        font-size: 10px;
+        margin-left: 10px;
+        color: #ccc;
+    }
+    .footer_last_text p:nth-child(2) span {
+        font-weight: bold;
+        color: white;
+    }

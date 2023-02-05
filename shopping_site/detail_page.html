@@ -1,0 +1,2218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/eae775b921.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/top_button.css">
+    <script type="module" src="./js/detail_page.js" defer></script>
+</head>
+<style>
+    .product_information {
+        width: 1245px;
+        /* background-color: yellow; */
+        margin: 0 auto;
+        margin-top: 100px;
+        overflow: hidden;
+    }
+    .product_image {
+        width: 615px; height: 730px;
+        margin-right: 15px;
+        float: left;
+    }
+    .information_text {
+        width: 615px; height: 730px;
+        border-top: 2px solid #ccc;
+        box-sizing: border-box;
+        float: left;
+    }
+    .product_name {
+        font-size: 25px;
+        padding: 20px 0px 20px 20px;
+        /* background-color: violet; */
+        border-bottom: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    .sell_price {
+        padding: 15px 0px 15px 20px;
+        /* background-color: wheat; */
+        height: 30px;
+    }
+    .sell_price p:nth-child(1) {
+        font-size: 20px;
+        font-weight: bold;
+        float: left;
+        width: 150px;
+        /* background-color: turquoise; */
+    }
+
+    .sell_price p:nth-child(2) {
+        float: left;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: line-through;
+    }
+    .sale_price {  padding: 15px 0px 15px 20px;
+        /* background-color: wheat; */
+        height: 30px;}
+    .sale_price p:nth-child(1) {
+         font-size: 20px;
+        font-weight: bold;
+        float: left;
+        width: 150px;
+        /* background-color: turquoise; */
+    }
+    .sale_price p:nth-child(2) {
+        color: red;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .delivery_price {
+         padding: 15px 0px 15px 20px;
+        /* background-color: wheat; */
+        height: 35px;
+        border-bottom: 1px solid #ccc;
+
+    }
+    .delivery_price p:nth-child(1) {
+font-size: 20px;
+        font-weight: bold;
+        float: left;
+        width: 150px;
+    }
+    .delivery_price p:nth-child(2) {
+        font-size: 18px;
+    }
+    .color {
+        padding: 30px 0px 10px 20px;
+        /* background-color: violet; */
+        overflow: hidden;
+    }
+    .color p {
+        width: 150px;
+        font-weight:bold;
+        font-size: 20px;
+        float: left;
+      
+        margin-top: 10px;
+    }
+    .color select {
+        float: left;
+        width: 400px;
+        /* padding: 10px 0px; */
+        font-size: 20px;
+        padding: 10px 0px;
+        font-weight: lighter;
+    }
+    .color select option {
+        font-size: 16px;
+    }
+    .size {
+           padding: 10px 0px 30px 20px;
+        /* background-color: violet; */
+        overflow: hidden;
+        border-bottom: 1px solid #ccc;
+    }
+    .size p {
+        width: 150px;
+        font-weight:bold;
+        font-size: 20px;
+        float: left; 
+        margin-top: 10px;
+    }
+    .size select {
+        float: left;
+        width: 400px;
+        /* padding: 10px 0px; */
+        font-size: 20px;
+        padding: 10px 0px;
+        font-weight: lighter;
+    }
+    .day_delivery{
+      color: white;
+      background-color: black;
+      margin: 30px 0px 30px 0px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 7px 0px;
+    }
+    .total {
+        text-align: right;
+        font-weight: bold;
+        font-size: 20px;
+        border-top: 1px solid #ccc;
+        padding: 30px 20px 40px 0px;
+        box-sizing: border-box;
+        /* background-color: turquoise; */
+    }
+    .total span {
+        font-size: 30px;
+    }
+    .buy div {
+        float: left;
+        width: 195px;
+        /* background-color: violet; */
+        text-align: center;
+        padding: 18px 0px;
+        font-weight: bold;
+        color: #494949;
+        font-size: 20px;
+        border: 1px solid black;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+    .buy div:nth-child(1) {
+        background-color: rgb(67, 181, 78);
+        color: white;
+       }
+    .buy div:nth-child(2) {
+        margin: 0 15px;
+    }
+
+    .product_information_image {
+        width: 1065px;
+        margin: 0 auto;
+        /* background-color: turquoise; */
+        margin-top: 100px;
+    }
+    
+    .product_information_image div {
+        margin: 0 auto;
+        width: 1000px;
+        margin-top: 100px;
+    }
+    .product_information_image div img {
+        width: 100%;
+    }
+    .payment_information {
+        width: 1245px; margin: 0 auto;
+    }
+    .payment_information .payment_first {
+        /* background-color: yellow; */
+        padding-bottom: 20px;
+        box-sizing: border-box;
+        font-weight: bold;
+        font-size: 20px;
+        border-bottom: 1px solid #ccc;
+    }
+    .payment_information div {
+        /* background-color: pink; */
+        padding: 30px 0px 10px 10px;
+    }
+    .payment_information div p {
+        padding-bottom: 8px;
+        color: #494949;
+    }
+
+    .delivery {
+        width: 1245px; margin: 0 auto;
+        margin-top: 60px;
+        /* background-color: yellow; */
+        height: 230px;
+    }
+    .delivery_guide {
+        border-bottom: 1px solid #ccc;
+        height: 40px;
+    }
+    .delivery_guide i {
+          float: left;
+          /* background-color: yellow; */
+          font-size: 20px;
+          margin-top: 5px;
+    }
+    .delivery_guide p {
+        float: left;
+        font-weight: bold;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+    .lookup {
+        display: inline-block;
+        margin-left: 20px;
+        border: 1px solid black;
+        padding: 3px 7px 4px 0px;
+        overflow: hidden;
+    }
+    .lookup i {
+        font-size: 14px;
+        margin-top: 5px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .delivery p {
+        color: #494949;
+        margin-left: 10px;
+        margin-bottom: 5px;
+    }
+    .delivery_sub {
+        margin-top: 30px;
+    }
+    .delivery_sub p {
+        margin-bottom: 10px;
+        color: #494949;
+    }
+
+    .exchange {
+        width: 1245px; margin: 0 auto;
+    }
+    .exchange>p {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+    }
+    .repeat p {
+        margin-top: 7px;
+    }
+    .repeat {
+        /* background-color: yellow; */
+        margin-top:30px;
+        margin-bottom: 30px;
+    }
+    .repeat p:nth-child(1) {
+        font-weight: bold;
+    }
+    .repeat p:nth-child(2) {
+        margin-top: 25px;
+    }
+
+    .for_border {
+        border: 1px solid #ccc;
+        width: 1500px; margin: 0 auto;
+        padding: 100px 0px 100px 0px;
+        border-radius: 20px;
+        margin-top: 100px;
+        }
+    .customer_center {
+        width: 1245px; height: 200px;
+        margin: 0 auto;
+        /* background-color: yellow; */
+        margin-top: 80px;
+    }
+    .customer_center p:nth-child(1) {
+        text-align: center;
+        font-weight: bold;
+        font-size: 25px;
+    }
+     .customer_center p:nth-child(2) {
+        text-align: center;
+        margin-top: 30px;
+    }
+    .customer_center p:nth-child(3) {
+        text-align: center;
+    }
+
+    .hover_menu .sub {
+        display: none;
+        margin-left: -15px;
+        position: relative;
+        z-index: 30;
+        margin-top: 3px;
+    }
+
+
+    .for_teleport_view {
+        width: 1245px;
+        height: 135px;
+        margin: 0 auto;
+    }
+    .related_product {
+        width: 1245px;
+        margin: 0 auto;
+        margin-top: 100px;
+        height: 650px;
+        /* background-color: skyblue; */
+    }
+    .related_product p {
+        text-align: center; 
+    }
+    .related_product p:nth-child(1) {
+        margin-bottom: 30px;
+    }
+    .related_product p:nth-child(2) {
+        margin-bottom: 40px;
+    }
+    .related_product ul {
+     display: flex;
+     justify-content: space-between;
+    }
+    .related_product ul li {
+        width: 18%; height: 400px;
+        /* background-color: yellow; */
+        float: left;
+        overflow: hidden;
+    }
+    .for_img_overflow {
+        width: 100%; height: 300px;
+        overflow: hidden;
+    }
+    .related_product ul li:hover img {
+        transform: scale(1.1);
+    }
+    .related_product ul li:hover .for_img_overflow {
+        border: 3px dashed #ccc;
+        box-sizing: border-box;
+    }
+    .related_product ul li img {
+        width: 100%; height:100%;
+        transition: all 0.2s;
+    }
+    .related_product_picture ul li {
+        position: relative;
+    }
+    #check1, #check2, #check3, #check4, #check5 {
+        display: none;
+    }
+    #check1:checked ~label i:nth-child(1),
+    #check2:checked ~label i:nth-child(1),
+    #check3:checked ~label i:nth-child(1),
+    #check4:checked ~label i:nth-child(1),
+    #check5:checked ~label i:nth-child(1) {
+       color: cornflowerblue;
+    }
+    .related_product_picture i:nth-child(1) {
+        color: snow;
+    }
+    /* .related_product_picture ul li label {
+        width: 20px; height: 20px;
+        background-color: yellow;
+    } */
+    .related_product_picture ul li label  {  
+        position: absolute;
+        top: 5px;
+        left: 10px;
+        font-size: 25px;
+        z-index: 10;
+    }
+    .related_product_picture ul li p:nth-child(4) {
+        margin-top: 15px;
+        margin-bottom: 0px;
+        font-weight: bold;
+        font-size: 14px;
+        
+    }
+    .related_product_picture ul li p:nth-child(5) {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    .buy_with {
+        width: 150px; height: 50px;
+        margin: 0 auto;
+        background-color: rgb(51, 51, 51);
+        border-radius: 5px;
+        line-height: 50px;
+        font-size: 14px;
+        color: white;
+        font-weight: bold;
+    }
+    .buy_with i {
+        margin-left: 22px;
+        margin-right: 5px;
+    }
+    .buy_with:hover {
+        background-color: rgb(70, 70, 70);
+    }
+
+    .review {
+        width: 1245px; height: 200px;
+        margin: 0 auto;
+        margin-top: 50px;
+        /* background-color: yellow; */
+        border-top: 1px solid #ccc;
+        padding-top: 15px;
+        border-left: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    .review_point {
+        width: 180px; height: 200px;
+        /* background-color: cadetblue; */
+        padding-top: 50px;
+        box-sizing: border-box;
+        float: left;
+    }
+    .review_point p:nth-child(1) {
+        font-size: 60px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .review_point p:nth-child(2) {
+        text-align: center;
+        color: #ccc;
+    }
+
+    .review_star {
+        width: 790px; height: 200px;
+        float: left;
+        background-color: white;
+    }
+    .review_star div {
+        width: 800px; height: 30px; 
+        /* background-color: yellowgreen; */
+        margin-bottom: 5px;
+    }
+    .first_star {
+        margin-top: 15px;
+    }
+    .review_star div p:nth-child(1) {
+        float: left;
+        color: rgb(71, 71, 71);
+    }
+    .review_star div div:nth-child(2) {
+        width: 650px; 
+        background-color: rgb(249, 249, 249);
+        height: 23px;
+        float: left;
+        margin-left: 10px;
+    }
+    .review_star div div:nth-child(2) div {
+        width: 610px; height:23px;
+        background-color: black;
+        float: left;
+    }
+    .review_star div:nth-child(2) div:nth-child(2) div {
+        width: 40px;
+    }
+    .review_star div:nth-child(3) div:nth-child(2) div {
+        width: 7px;
+    }
+     .review_star div:nth-child(4) div:nth-child(2) div {
+        width: 3px;
+    }
+      .review_star div:nth-child(5) div:nth-child(2) div {
+        width: 0px;
+    }
+    .review_star div p:nth-child(3) {
+        color: rgb(150, 150, 150);
+        float: left;
+        margin-left:10px;
+    }
+    .review_6photos {
+        width: 270px; 
+        /* height: 200px; */
+        /* background-color: violet; */
+        float: left;
+    }
+    .review_6photos ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .review_6photos ul li {
+        margin-bottom: 10px;
+        width: 32%;
+        height: 85px;
+    }
+    .review_6photos ul li img {
+        width: 100%; 
+        height: 100%;
+    }
+
+    .review_satisfy {
+        width: 1245px; height: 50px;
+        /* background-color: yellow; */
+        margin: 0 auto;
+        line-height: 25px;
+        padding-left: 30px;
+        padding-top: 20px;
+        border-left: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    .review_register {
+        width: 1245px; 
+        height: 250px;
+        margin: 0 auto;
+        border: 1px solid black;
+        padding: 30px 30px;
+        box-sizing: border-box;
+    }
+    .review_register .first_line {
+        height: 100px;
+        /* background-color: yellow; */
+    }
+    .review_register .input_image {
+        width: 100px;
+        height: 100px;
+        background-color: oldlace;
+        float: left;
+        border: 1px solid black;
+        box-sizing: border-box;
+    }
+    .review_register .input_image img {
+        width: 100%;
+        height: 100%;
+    }
+    .review_register .register_image {
+        margin-left: 40px;
+    }
+    .review_register .register_text {
+        margin-top: 40px;
+        width: 400px;
+        height: 20px;
+    }
+    .review_register>p:last-child {
+        float: right;
+        width: 200px;
+        height:40px;
+        line-height: 40px;
+        margin-top: 40px;
+        background-color: #ccc;
+        text-align: center;
+
+    }
+
+
+
+
+    .review_contents {
+        width: 1245px; 
+        /* height: 460px; */
+        /* background-color: yellow; */
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+    #review_order1, #review_order2, #review_order3 {
+        display: none;
+    }
+    .recommend_order, .recent_order, .grade_order {
+        display: none;
+    }
+    #review_order1:checked ~.recommend_order {
+        display: block;
+    }
+    #review_order2:checked ~.recent_order {
+        display: block;
+    }
+    #review_order3:checked ~.grade_order {
+        display: block;
+    }
+    #review_order1:checked ~ul label:nth-child(1) li {
+        text-decoration: underline;
+        font-weight: bold;
+    }
+    #review_order2:checked ~ul label:nth-child(2) li {
+        text-decoration: underline;
+        font-weight: bold;
+    }
+    #review_order3:checked ~ul label:nth-child(3) li {
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    .review_contents ul {
+        width: 100%; height:40px;
+        /* background-color: violet; */
+        line-height: 20px;
+        border-bottom: 1px solid #ccc;
+    }
+    .review_contents ul li {
+        padding: 0 20px;
+        float: left;
+        border-right: 0.5px solid #ccc;
+        margin-top: 10px;
+        font-size: 13px;
+    }
+    .review_contents ul label:nth-child(3) li {
+        border-right: 0px;
+    }
+    .review_text {
+        width: 1245px; 
+        height: 320px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        overflow: hidden;
+        border-bottom: 1px solid #ccc;
+    }
+    .review_text_left {
+        width: 400px; 
+        /* height: 300px; */
+        float: left; 
+        /* background-color: skyblue; */
+        margin-left: 20px;
+        padding-top: 30px;
+        box-sizing: border-box;
+    }
+    .review_text_left div:nth-child(1) {
+        width: 100px; height: 100px;
+        background-color: salmon;
+    }
+    .review_text_left div:nth-child(1) img {
+        width: 100%; height: 100%;
+    }
+    .review_text_left div:nth-child(2) {
+        margin-top: 20px;
+    }
+    .review_text_left .like {
+        font-size: 12px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    .review_text_left .like_person {
+        font-size: 12px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    .review_text_left div:nth-child(4) {
+        margin-top: 55px;
+        /* width: 200px; */
+        height: 30px;
+        /* background-color: lightpink; */
+    }
+    .review_text_left div:nth-child(4) p {
+        float: left;
+        font-size: 12px;
+    } 
+    .review_text_left div:nth-child(4) p:nth-child(1) {
+        font-weight: bold;
+        line-height: 8px;
+        margin-right: 20px;
+    }
+    .review_text_left div:nth-child(4) p:nth-child(2), .review_text_left div:nth-child(4) p:nth-child(3) {
+        margin-top: 2px;
+        width: 70px; height: 25px;
+        text-align: center;
+        line-height: 24px;
+        /* background-color: wheat; */
+        border-radius: 13px;
+        margin-right: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    .delete_review_button {
+        float: right;
+        padding-right: 20px;
+        box-sizing: border-box;
+        background-color: yellow;
+        font-size: 20px;
+        width: 10px;
+        height: 30px;
+    }
+
+    .review_text_right {
+        width: 150px; height: 320px;
+        /* background-color: skyblue; */
+        float: right;
+        margin-right: 20px;
+    }
+    .review_text_right p:nth-child(1) {
+        margin-top: 30px;
+        text-align: right;
+        color: rgb(176, 176, 176);
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .review_text_right p:nth-child(2) {
+         text-align: right;
+         font-size: 12px;
+         font-weight: bold;
+         color: rgb(88, 88, 88);
+         margin-top: 3px;
+    }
+    .review_text_right p:nth-child(3) {
+         text-align: right;
+         margin-top: 20px;
+         color: rgb(176, 176, 176);
+         font-size: 12px;
+         font-weight: bold;
+    }
+    .review_text_right p:nth-child(4) {
+         text-align: right;
+         margin-top: 3px;
+         font-weight: bold;
+         font-size: 12px;
+
+    }
+    .review_text_right p:nth-child(5) {
+        margin-top: 155px;
+        /* background-color: coral; */
+        display: inline-block;
+        padding: 5px 27px;
+        font-size: 13px;
+        color: rgb(90, 90, 90);
+        font-weight: bold;
+        border-radius: 15px;
+        border: 1px solid #ccc;
+        margin-left: 52px;
+    }
+
+    .teleport {
+        width: 1245px;
+        margin: 0 auto;
+        height: 40px;
+        /* margin-top: 100px; */
+        padding-bottom: 20px;
+        padding-top: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+    .teleport ul li {
+        float: left;
+        width: 20%;
+        text-align: center;
+        line-height: 40px;
+        color: rgb(170, 170, 170);
+    }
+    .teleport ul li:hover {
+        color: rgb(66, 66, 66);
+    }
+
+    .product_QNA {
+        width: 1245px;
+        height: 500px;
+        margin: 0 auto;
+        /* background-color: aqua; */
+    }
+    .product_QNA ul li {
+        float:left;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        font-weight: bold;
+        padding: 5px 0px;
+        border-bottom: 1px solid #ccc;
+        font-size: 12px;
+    }
+    .product_QNA ul li img {
+        width: 100%;
+       height: 100%;
+    }
+    .product_QNA ul li:nth-child(1) {
+        width: 100px;
+        /* background-color: yellow; */
+    }
+    .product_QNA ul:nth-child(1) li:nth-child(2) {
+        text-align: center;
+    }
+    .product_QNA ul li:nth-child(2) {
+        width: 905px;
+        text-align: left;
+        font-size: 13px;
+        color: rgb(130, 130, 130);
+    }
+    .product_QNA ul li:nth-child(3) {
+        width: 120px;
+        /* background-color: coral; */
+        color: rgb(66, 66, 66);
+    }
+    .product_QNA ul li:nth-child(4) {
+        /* background-color: wheat; */
+        width: 120px;
+        color: rgb(66, 66, 66);
+    }
+    .product_QNA ul:nth-child(2n+1) li i:nth-child(1) {
+        margin-left: 20px;
+        transform: rotate(90deg);
+        color: rgb(237, 120, 106);
+        font-size: 18px;
+        margin-right: 10px;
+    }
+    .product_QNA ul:nth-child(2n+1) li i:nth-child(2) {
+        margin-left: 5px;
+    }
+    .product_QNA ul:nth-child(2n) li:nth-child(2) i {
+      margin-left: 5px;
+    }
+</style>
+<body>
+<header class="header">
+        <a href="index.html"><img src="./images/logo.jpg"></a>
+        <ul>
+            <li><a href="login.html">로그인</a></li>
+            <li><a href="sign_up.html">회원가입</a><div class="sign_up">5000p</div><i class="fa-solid fa-caret-up"></i></li>
+            <li><a href="#">마이페이지</a></li>
+            <li><a href="#">고객센터</a></li>
+        </ul>
+    </header>
+
+    <nav class="lnb">
+        <div class="lnb_line">
+
+            <div class="bar">
+                <i class="fa-solid fa-bars"></i>
+                <section class="hover_all_menu">
+                    <div class="for_menu_margin">
+                         <ul>
+                            <li>BEST</li>
+                            <li>반팔</li>
+                            <li>맨투맨</li>
+                            <li>반바지</li>
+                        </ul>
+                        <ul>
+                            <a href="./subpage.html"><li>한정세일</li></a>
+                            <li>상의</li>
+                            <li>하의</li>
+                        </ul>
+                        <ul>
+                           <li>프리미엄</li>
+                            <li>2~3만원대</li>
+                            <li>4~5만원대</li>
+                            <li>6~7만원대</li>
+                        </ul>
+                        <ul>
+                            <li>헬스나시</li>
+                            <li>와이드</li>
+                            <li>민소매</li>
+                            <li></li>
+                        </ul>
+                        <ul>
+                            <li>상의</li>
+                            <li>오버핏</li>
+                            <li>긴팔</li>
+                            <li>맨투맨/후드</li>
+                            <li>아우터</li>
+                        </ul>
+                        <ul>
+                            <li>하의</li>
+                            <li>반바지</li>
+                            <li>긴바지</li>
+                        </ul>
+                        <ul>
+                            <li>우먼</li>
+                            <li>상의</li>
+                            <li>하의</li>
+                        </ul>
+                        <ul>
+                            <li>운동용품</li>
+                            <li>양말</li>
+                            <li>보틀</li>
+                            <li>볼캡</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <ul class="lnb_list">
+                <div class="hot">HOT</div>
+                <li class="hover_menu">BEST
+                    <ul class="sub">
+                        <li>반팔</li>
+                        <li>맨투맨</li>
+                        <li>반바지</li>
+                    </ul>
+                </li>
+                <li class="hover_menu"><a href="./subpage.html">한정세일</a>
+                    <UL class="sub">
+                        <li>상의</li>
+                        <li>하의</li>
+                    </UL>
+                </li>
+                 <li class="hover_menu">프리미엄
+                    <ul class="sub">
+                        <li>2~3만원대</li>
+                        <li>4~5만원대</li>
+                        <li>6~7만원대</li>
+                    </ul>
+                </li>
+                <li class="hover_menu">헬스나시
+                    <ul class="sub">
+                        <li>와이드</li>
+                        <li>민소매</li>
+                    </ul>
+                </li>
+                <li class="hover_menu">상의
+                    <ul class="sub">
+                        <li>반팔</li>
+                        <li>오버핏</li>
+                        <li>긴팔</li>
+                        <li>맨투맨/후드</li>
+                    </ul>
+                </li>
+                  <li class="hover_menu">하의
+                    <ul class="sub">
+                        <li>반바지</li>
+                        <li>긴바지</li>
+                    </ul>
+                </li>
+                 <li class="hover_menu">우먼
+                    <ul class="sub">
+                        <li>상의</li>
+                        <li>하의</li>
+                    </ul>
+                </li>
+                <li class="hover_menu">운동용품
+                    <ul class="sub">
+                        <li>양말</li>
+                        <li>보틀</li>
+                        <li>볼캡</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="search_box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="bag">
+                <i class="fa-solid fa-bag-shopping"><p>0</p></i>
+            </div>
+        
+        </div>
+     </nav>
+
+     <div class="for_topbutton" id="for_topbutton"></div>
+
+     <section class="product_information">
+        <div class="product_image">
+            <img src="./images/디테일페이지상품.jpg">
+        </div>
+        <div class="information_text">
+            <p class="product_name">소프트 터치 루즈핏 긴팔 블랙</p>
+            <div class="sell_price"><p>판매가</p><p>22,000원</p></div>
+           <div class="sale_price"><p>할인판매가</p><p>18,000원</p></div>
+           <div class="delivery_price"><p>배송비</p><p>3000원 (5만원 이상 구매 시 무료)</p></div>
+
+            <div class="color"><p>색상</p><select><option>-[필수]옵션을 선택해 주세요-</option><option>블랙</option><option>화이트</option><option>차콜</option>
+            </select></div>
+            <div class="size"><p>사이즈</p><select><option>-[필수]옵션을 선택해 주세요-</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+            </select></div>
+
+            <p class="day_delivery">평일 기준 오후 1시 이후 주문 건 당일 배송</p>
+            <p class="total">TOTAL : <span>0</span> (0개)</p>
+
+            <div class="buy">
+                <div>바로구매</div>
+                <div>장바구니</div>
+                <div>관심상품</div>
+            </div>
+        </div>
+     </section>
+
+     <div class="for_teleport_view"  id="teleport_first"></div>
+     <section class="teleport">
+        <ul>
+            <a href="#teleport_first"><li style="color:black; font-weight: bold;">관련상품</li></a>
+            <a href="#teleport_second"><li>상품사용후기</li></a>
+            <a href="#teleport_third"><li>상품상세정보</li></a>
+            <a href="#teleport_fourth"><li>상품구매안내</li></a>
+             <a href="#teleport_fifth"><li>상품문의</li></a>
+        </ul>
+     </section>
+
+     <section class="related_product">
+        <p>
+            <span style="font-weight:bold; font-size:20px;">관련상품</span>
+        </p>
+        <p>이 상품과 관련된 상품을 확인해보세요.</p>
+        <div class="related_product_picture">
+        <ul>
+            <li>
+                <input type="checkbox" id="check1">
+                <label for="check1">
+                <i class="fa-solid fa-circle-check"></i>
+                </label>
+                <div class="for_img_overflow">
+                <img src="./images/관련상품/관련상품1.jpg">
+                </div>
+                <p>드라이 숏팬츠 화이트 베이지</p>
+                <p>23,000원</p>
+            </li>
+            <li>
+                <input type="checkbox" id="check2">
+                <label for="check2">
+                <i class="fa-solid fa-circle-check"></i>
+                </label>
+                <div class="for_img_overflow">
+                <img src="./images/관련상품/관련상품2.jpg">
+                </div>
+                <p>드라이 숏팬츠 라이트 카키</p>
+                <p>23,000원</p>
+            </li>
+            <li>
+                <input type="checkbox" id="check3">
+                <label for="check3">
+                <i class="fa-solid fa-circle-check"></i>
+                </label>
+                <div class="for_img_overflow">
+                <img src="./images/관련상품/관련상품3.jpg">
+                </div>
+                <p>허그본 HVN 올데이 탄성팬츠</p>
+                <p><span style="color:#ccc; text-decoration: line-through;">32,000원</span><span style="color:red;">26,000원</span></p>
+            </li>
+            <li>
+                <input type="checkbox" id="check4">
+
+                <label for="check4">
+                <i class="fa-solid fa-circle-check"></i>
+                </label>
+
+                <div class="for_img_overflow">
+                <img src="./images/관련상품/관련상품4.jpg">
+                </div>
+
+                <p>드라이 숏팬츠 타크 그레이</p>
+                <p>23,000원</p>
+            </li>
+            <li>
+                <input type="checkbox" id="check5">
+                <label for="check5">
+                <i class="fa-solid fa-circle-check"></i>
+                </label>
+                <div class="for_img_overflow">
+                <img src="./images/관련상품/관련상품5.jpg">
+                </div>
+                <p>드라이 숏팬츠 다크 카키</p>
+                <p>23,000원</p>
+            </li>
+           
+        </ul>
+        </div>
+        <div class="buy_with">
+            <i class="fa-regular fa-square-plus"></i>함께 구매하기
+        </div>
+     </section>
+     <div class="for_teleport_view"  id="teleport_second"></div>
+     <section class="teleport">
+        <ul>
+            <a href="#teleport_first"><li >관련상품</li></a>
+            <a href="#teleport_second"><li style="color:black; font-weight: bold;">상품사용후기</li></a>
+            <a href="#teleport_third"><li>상품상세정보</li></a>
+            <a href="#teleport_fourth"><li>상품구매안내</li></a>
+             <a href="#teleport_fifth"><li>상품문의</li></a>
+        </ul>
+     </section>
+
+     <section class="review">
+
+        <div class="review_point">
+            <p>4.9</p>
+            <p>리뷰 <span style="color: black; font-weight: bold;">12738</span></p>
+        </div>
+
+        <div class="review_star">
+            <div class="first_star">
+                <p>5 stars</p> 
+                <div><div></div></div> 
+                <p>(12047)</p>
+            </div>
+            <div>
+                <p>4 stars</p> 
+                <div><div></div></div> 
+                <p>(596)</p>
+            </div>
+            <div>
+                <p>3 stars</p> 
+                <div><div></div></div> 
+                <p>(86)</p>
+            </div>
+            <div>
+                <p>2 stars</p> 
+                <div><div></div></div> 
+                <p>(9)</p>
+            </div>
+            <div>
+                <p>1 stars</p> 
+                <div><div></div></div> 
+                <p>(0)</p>
+            </div>
+        </div>
+
+        <div class="review_6photos">
+            <ul>
+                <li><img src="./images/상품리뷰사진/상품리뷰사진1.jpg"></li>
+                <li><img src="./images/상품리뷰사진/상품리뷰사진2.jpg"></li>
+                <li><img src="./images/상품리뷰사진/상품리뷰사진3.jpg"></li>
+                <li><img src="./images/상품리뷰사진/상품리뷰사진4.jpg"></li>
+                <li><img src="./images/상품리뷰사진/상품리뷰사진5.jpg"></li>
+                <li><img src="./images/상품리뷰사진/상품리뷰사진6.jpg"></li>
+            </ul>
+        </div>
+     </section>
+
+
+     <section class="review_satisfy">
+        <span style="font-weight:bold">99.9%</span> 의 구매자들이 이 상품에 만족하고 있어요!
+     </section>
+
+     <section class="review_register">
+        <div class="first_line">
+        <div class="input_image">
+            <p style="line-height: 100px;text-align: center;">이미지 추가</p>
+        </div>
+        <input type="file" class="register_image" accept="image/png, image/jpeg">
+        </div>
+
+        <input type="text" class="register_text" placeholder="내용을 작성해주세요">
+        <p class="register_review_btn">리뷰 등록</p>
+
+     </section>
+
+     <section class="review_contents">
+        <input type="radio" id="review_order1" name="review" checked>
+        <input type="radio" id="review_order2" name="review">
+        <input type="radio" id="review_order3" name="review">
+        <ul>
+            <label for="review_order1"><li>추천순</li></label>
+            <label for="review_order2"><li>최신순</li></label>
+            <label for="review_order3"><li>평점순</li></label>
+        </ul>
+
+
+        <div class="recommend_order">
+
+        <div class="review_text review_text1">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진1.jpg" class="aaaa"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">너무 마음에 듭니다 짱짱!!</p>
+                <div>
+                    <p class="like_person">이 리뷰를 + 5 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <!-- <div class="delete_review_button">X</div> -->
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2021-09-29</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진2.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">리뷰대로 역시 좋아요</p>
+                <div>
+                    <p class="like">이 리뷰를 + 5 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2021-06-26</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진3.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">아주 가볍고 좋습니다!</p>
+                <div>
+                    <p class="like">이 리뷰를 + 4 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2021-10-11</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진4.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">만족합니다 잘 입을게요!</p>
+                <div>
+                    <p class="like">이 리뷰를 + 4 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2021-09-29</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진5.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">입어본것중 젤 이뻐요!</p>
+                <div>
+                    <p class="like">이 리뷰를 + 4 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2021-04-27</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진6.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">사봤던 옷들중 젤 맘에 드네요</p>
+                <div>
+                    <p class="like">이 리뷰를 + 3 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2021-04-23</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진7.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">재질이 쫀쫀하고 좋아서 오래 입을거 같아요 !</p>
+                <div>
+                    <p class="like">이 리뷰를 + 3 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2021-06-02</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진8.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">마른체형인데 되게 이뻐요</p>
+                <div>
+                    <p class="like">이 리뷰를 + 2 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2021-05-30</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진9.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">핏 완벽합니다 !!</p>
+                <div>
+                    <p class="like">이 리뷰를 + 2 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2021-05-30</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진10.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">늘 여기서만 사요 ㅎㅎㅎㅎ</p>
+                <div>
+                    <p class="like">이 리뷰를 + 2 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2021-05-30</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진11.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">색깔별로 구매했습니다~!</p>
+                <div>
+                    <p class="like">이 리뷰를 + 1 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2021-05-30</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진12.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">운동복으로 아주 좋아요 !</p>
+                <div>
+                    <p class="like">이 리뷰를 + 1 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2021-05-30</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진13.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">3장 더 주문했습니당</p>
+                <div>
+                    <p class="like">이 리뷰를 + 1 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2021-05-30</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진14.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">머슬핏 중에 탑!!!</p>
+                <div>
+                    <p class="like">이 리뷰를 + 1 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2021-05-30</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진15.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">저희 아들 최고의 옷입니다</p>
+                <div>
+                    <p class="like">이 리뷰를 + 1 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2021-05-30</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+
+        </div><!--recommend_order-->
+
+        <div class="recent_order">
+
+            <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진16.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">사이즈도 괜찮고 전체적으로 만족합니다 ㅎㅎ</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-25</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진17.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">가격 대비 상당히 만족합니다:)</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-25</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진18.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">재질 촉감 핏 다 좋아요!</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-25</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진19.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">괜찮게 입고 있네요 ㅎ</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-24</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진20.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">몸이 더 좋아보이는 옷이네요 ~~~</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-24</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진21.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">너무너무 만족합니다 !!!!!</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-24</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진22.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">재질도 정말좋구 가격도 괜찮아서 면티는 여기서 삽니다 ㅎㅎ</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-23</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진23.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">굿잡굿잡굿잡!!</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-23</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진24.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">건조기 돌려도 짱짱하고 좋습니다</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-23</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진25.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">배송도 빠르고 옷도 좋아요</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-21</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진26.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">잘입겠습니다!!</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-21</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+         <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진27.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">많이 파세요 !!!!!!!</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-21</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+         <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진28.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">내구성이 말이 안됩니다 ㅎㅎㅎ</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-21</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+         <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진29.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">이것만 입어요! 진짜 최고</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-21</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+         <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진30.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">가성비 미쳤습니다..</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-21</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+
+
+        </div><!--recent_order-->
+
+
+        <div class="grade_order">
+
+            <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진31.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">타사 제품 많이 입어봤지만 여기만한 제품이 없네요 !</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-30</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+            <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진32.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">이뻐요 만족합니다!!</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-30</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+            <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진33.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">오랜만에 다시 구매했는데 원단이 바뀌었네요 ㅎ</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-29</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+            <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진34.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">좋네요. 데일리로 입기 좋아요</p>
+                <div>
+                    <p class="like">옷이 잘 빠져서 좋아요</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-28</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+            <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진35.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">싸고 좋음 시원함.</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-28</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+            <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진36.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">핏 스타일 모두 만족스럽고, 체형 보정 효과도 있는 것 같습니다</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-27</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+            <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진37.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">소재가 늘어짐 없이 너무 좋네요</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-26</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+            <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진38.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">예쁘게 잘 입고 있습니다 좋아요</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-26</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진39.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">여기 단골 될거 같아요 ㅎ</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-24</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진40.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">사이즈 저한테 딱 맞습니다!! 감사합니다</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-24</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진41.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">검은색 사고 추가로 더 샀어요 ㅎ</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-24</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진42.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">덕분에 여름 잘 보냈습니다!!</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-23</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진43.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">핏 대박이네요 강추합니다</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-22</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진44.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">허그본은 반드시 성공합니다</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-21</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+        <div class="review_text">
+            <div class="review_text_left">
+                <div><img src="./images/디테일페이지리뷰글사진/리뷰사진45.jpg"></div>
+                <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="like">재질이 너무 고급집니다..!</p>
+                <div>
+                    <p class="like">이 리뷰를 0 명이 좋아합니다.</p>
+                    <p>추천</p>
+                    <p>비추천</p>
+                </div>
+            </div>
+            <div class="review_text_right">
+                <p>작성 날짜</p>
+                <p>2022-10-20</p>
+                <p>작성자</p>
+                <p>네이버 페이 구매자</p>
+                <p>더보기</p>
+            </div>
+        </div><!--review_text-->
+
+        </div>
+
+     </section>
+
+     <div class="for_teleport_view" id="teleport_third"></div>
+
+     <section class="teleport">
+        <ul>
+            <a href="#teleport_first"><li >관련상품</li></a>
+            <a href="#teleport_second"><li>상품사용후기</li></a>
+            <a href="#teleport_third"><li style="color:black; font-weight: bold;">상품상세정보</li></a>
+            <a href="#teleport_fourth"><li>상품구매안내</li></a>
+             <a href="#teleport_fifth"><li>상품문의</li></a>
+        </ul>
+     </section>
+
+     <section class="product_information_image">
+        <div><img src="./images/디테일페이지/디테일페이지1.jpg"></div>
+        <div><img src="./images/디테일페이지/디테일페이지2.jpg"></div>
+        <div><img src="./images/디테일페이지/디테일페이지3.jpg"></div>
+        <div><img src="./images/디테일페이지/디테일페이지4.jpg"></div>
+        <div><img src="./images/디테일페이지/디테일페이지5.jpg"></div>
+        <div><img src="./images/디테일페이지/디테일페이지6.jpg"></div>
+        <div><img src="./images/디테일페이지/디테일페이지7.jpg"></div>
+        <div><img src="./images/디테일페이지/디테일페이지8.jpg"></div>
+        <div><img src="./images/디테일페이지/디테일페이지9.jpg"></div>
+        <div><img src="./images/디테일페이지/디테일페이지10.jpg"></div>
+        <div><img src="./images/디테일페이지/디테일페이지11.jpg"></div>
+        <div><img src="./images/디테일페이지/디테일페이지12.jpg"></div>
+        <div><img src="./images/디테일페이지/디테일페이지13.jpg"></div>
+        <div><img src="./images/디테일페이지/디테일페이지14.jpg"></div>
+        <div><img src="./images/디테일페이지/디테일페이지15.jpg"></div>
+        <div><img src="./images/디테일페이지/디테일페이지16.jpg"></div>
+     </section>
+
+     <div class="for_teleport_view" id="teleport_fourth"></div>
+
+     <section class="teleport">
+        <ul>
+            <a href="#teleport_first"><li >관련상품</li></a>
+            <a href="#teleport_second"><li>상품사용후기</li></a>
+            <a href="#teleport_third"><li>상품상세정보</li></a>
+            <a href="#teleport_fourth"><li style="color:black; font-weight: bold;">상품구매안내</li></a>
+             <a href="#teleport_fifth"><li>상품문의</li></a>
+        </ul>
+     </section>
+
+<section class="for_border" style="margin-bottom:100px;">
+     <div class="payment_information">
+        <p class="payment_first"><i class="fa-regular fa-credit-card"></i>
+         상품 결제정보</p>
+         <div><p><span style="font-weight:bold;">고액결제의 경우</span> 안전을 위해 카드사에서 확인전화를 드릴 수도 있습니다.</p>
+        <p>확인과정에서 도난 카드의 사용이나 타인 명의의 주문등 정상적인 주문이 아니라고 판단될 경우 임의로 주문을 <span style="font-weight:bold;">보류 또는 취소</span>할 수 있습니다.  </p></div>
+        <div><p><span style="font-weight:bold;">무통장 입금</span>은 상품 구매 대금은 PC뱅킹, 인터넷뱅킹, 텔레뱅킹 혹은 가까운 은행에서 직접 입금하시면 됩니다.</p>
+        <p>주문시 입력한 입금자명과 실제입금자의 성명이 반드시 일치하여야 하며, 7일 이내로 입금을 하셔야 하며 입금되지 않은 주문은 자동취소 됩니다.</p></div>
+        </div>
+
+    <div class="delivery">
+        <div class="delivery_guide">
+            <i class="fa-solid fa-truck"></i><p>배송안내</p>
+        <div class="lookup">
+            <i class="fa-solid fa-location-dot"></i>   배송조회
+        </div>
+        </div>
+        <div class="delivery_sub">
+       <p><span style="font-weight: bold;">-산간벽지나 도서지방</span>은 별도의 추가금액을 지불하셔야 하는 경우가 있습니다.</p>
+        <p>고객님께서 주문하신 상품은 입금 확인후 배송해 드립니다.</p>
+        <p>다만, 상품종류에 따라서 상품의 배송이 다소 지연될 수 있습니다.</p>
+        </div>
+    </div>
+
+    <div class="exchange">
+            <p><i class="fa-solid fa-rotate"></i> 교환 및 반품 안내</p>
+
+            <div class="repeat"><p>교환 및 반품 주소</p><p>-[47358]<span style="font-weight:bold;font-size: 18px;"> 부산광역시 부산진구 중앙대로 594 </span>(범천동) 6층 허그본</p></div>
+
+            <div class="repeat"><p>교환 및 반품이 가능한 경우</p><p>- 상품을 공급 받으신 날로부터 7일이내 단, 포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실된 경우에는 교환/반품이 불가능합니다.</p><p>- 공급받으신 상품 및 용역의 내용이 표시.광고 내용과 다르거나 다르게 이행된 경우에는 공급받은 날로부터 3월이내, 그사실을 알게 된 날로부터 30일이내</p></div>
+
+            <div class="repeat">
+                <p>교환 및 반품이 불가능한 경우</p>
+                <p>- 고객님의 책임 있는 사유로 상품등이 멸실 또는 훼손된 경우. 단, 상품의 내용을 확인하기 위하여 포장 등을 훼손한 경우는 제외</p>
+                <p>- 포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실된 경우</p>
+                <p>- 고객님의 사용 또는 일부 소비에 의하여 상품의 가치가 현저히 감소한 경우</p>
+                <p>- 시간의 경과에 의하여 재판매가 곤란할 정도로 상품등의 가치가 현저히 감소한 경우</p>
+                <p>- 복제가 가능한 상품등의 포장을 훼손한 경우</p>
+                <p> (자세한 내용은 고객만족센터 1:1 E-MAIL상담을 이용해 주시기 바랍니다.)</p>
+            </div>
+
+            <div class="repeat">
+                <p>※ 고객님의 마음이 바뀌어 교환, 반품을 하실 경우 상품반송 비용은 고객님께서 부담하셔야 합니다.</p>
+                <p>색상 교환, 사이즈 교환 등 포함</p>
+            </div>
+    </div>
+</section>
+
+<section class="teleport" id="teleport_fifth">
+        <ul>
+            <a href="#teleport_first"><li >관련상품</li></a>
+            <a href="#teleport_second"><li>상품사용후기</li></a>
+            <a href="#teleport_third"><li>상품상세정보</li></a>
+            <a href="#teleport_fourth"><li>상품구매안내</li></a>
+             <a href="#teleport_fifth"><li style="color:black; font-weight: bold;">상품문의</li></a>
+        </ul>
+     </section>
+
+     <div class="customer_center">
+<p>고객센터</p>
+<P>운영시간 : 월-금 10:00~17:00 (점심시간 12:30~13:30)</P>
+<P>주말/공휴일 OFF</P>
+</div>
+     
+<section class="product_QNA">
+    <ul>
+        <li>번호</li>
+        <li><span>제목</span></li>
+        <li>작성자</li>
+        <li>작성일</li>
+    </ul>
+     <ul>
+        <li>1</li>
+        <li>사이즈교환 <i class="fa-solid fa-lock" style="color: rgb(200, 200, 200);"></i></li>
+        <li>박**</li>
+        <li>2022-08-03</li>
+    </ul>
+     <ul>
+        <li></li>
+        <li><i class="fa-solid fa-turn-up"></i> 사이즈교환 <i class="fa-solid fa-lock" style="color: rgb(200, 200, 200);"></i></li>
+        <li><img src="./images/logo.jpg"></li>
+        <li>2022-08-04</li>
+    </ul>
+     <ul>
+        <li>2</li>
+        <li>교환 문의 <i class="fa-solid fa-lock" style="color: rgb(200, 200, 200);"></i></li>
+        <li>김**</li>
+        <li>2022-07-25</li>
+    </ul>
+     <ul>
+        <li></li>
+        <li><i class="fa-solid fa-turn-up"></i> 교환 문의 <i class="fa-solid fa-lock" style="color: rgb(200, 200, 200);"></i></li>
+        <li><img src="./images/logo.jpg"></li>
+        <li>2022-07-26</li>
+    </ul>
+     <ul>
+        <li>3</li>
+        <li>재입고 <i class="fa-solid fa-lock" style="color: rgb(200, 200, 200);"></i></li>
+        <li>김**</li>
+        <li>2022-07-25</li>
+    </ul>
+     <ul>
+        <li></li>
+        <li><i class="fa-solid fa-turn-up"></i> 재입고 <i class="fa-solid fa-lock" style="color: rgb(200, 200, 200);"></i></li>
+        <li><img src="./images/logo.jpg"></li>
+        <li>2022-07-26</li>
+    </ul>
+</section>
+
+<div class="for_footer_margin">
+    <footer class="footer">
+        <div class="logo_line">
+            <img src="./images/footer_logo.JPG">
+            <ul>
+                <li>회사소개</li>
+                <li>이용약관</li>
+                <li>개인정보처리방침</li>
+                <li>이용안내</li>
+            </ul>
+        </div>
+        <p class="phone_number">T.070-4024-2767  월~금 10:00~17:00 점심시간 12:30 ~ 13:30 주말/공휴일 OFF</p>
+        <section class="dark_text">
+            <div class="left_text">
+                <p>COMPANY : HUGVONE | OWNER:이승민,전용우 | ADDRESS : 47361 부산광역시 부산진구 범일로154번길 33 (범천동) 범일역풍림아이원 2층 허그본</p>
+                <p>사업자 등록번호 | 740-52-00373 <span>[사업자정보확인]</span> | 통신판매업 신고번호 | 2019-부산부산진-0408 | 개인정보관리책임자 : <span>허그본 (hugvone@hugvone.co.kr)</span></p>
+                <p>고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 PG 사의 구매안전서비스를 이용하실 수 있습니다. LG U+ 에스크로<span>[서비스가입사실확인]</span></p>
+            </div>
+            <div class="right_img">
+                <img src="./images/escrow_inicis.png">
+                <img src="./images/support_privacy.png">
+                 <img src="./images/support_ftc.png">
+                 <img src="./images/support_ssl_glob.png">
+            </div>
+            <div class="footer_last_text"><p>COPYRIGHT BY HUGVONE. ALL RIGHTS RESERVED. HOSTING BY 카페24(주)</p> <p>HOSTING CAFE24 | DESIGNED BY <span class="dfloor">DFLOOR</span></p></div>
+        </section>
+    </footer>
+</div>
+
+   <div class="top_button">
+        <div>
+            <img src="./images/카톡.JPG">
+        </div>
+
+        <a href="#for_topbutton"><div>
+            <i class="fa-solid fa-chevron-up"></i>
+        </div></a>
+    </div>
+
+</body>
+</html>
