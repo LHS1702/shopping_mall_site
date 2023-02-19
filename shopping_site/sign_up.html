@@ -10,37 +10,11 @@
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/top_button.css">
     <script src="./js/jquery-3.6.1.min.js"></script>
-    <!-- <script src="./for_sign_up.js"></script> -->
-    <!-- <script>
-      $(function(){
-        
-        $('#ID').focus();
-        let id = []
-        let password = 5678;
-        
-        $('#ID').change(function(){
-          userId = $('#ID').val();
-        })
-        $('#password').change(function(){
-          userId = $('#password').val();
-        })
-        $('#password_confirm').change(function(){
-          userId = $('#password_confirm').val();
-        })
-
-
-
-
-        $('sign_up_btn').click(function(){
-          
-        })
-      })
-    </script> -->
     <script>
         $(function(){
           
           let user_id;
-          let idData = ['greencomputer','redcomputer','bluecomputer','yellowcomputer','blackcomputer']
+          let idData = ['a','b','c','d']
           
           $('#ID').change(function(){
             user_id = $('#ID').val()
@@ -51,7 +25,7 @@
             for(let i=0; i<idData.length; i++) {
               result.push(user_id==idData[i]);
             }
-            if(result == 'false,false,false,false,false') {
+            if(result == 'false,false,false,false') {
               alert('사용가능한 아이디입니다')
             }
             else {
@@ -71,7 +45,6 @@
     height: 2000px;
     margin: 0 auto;
     margin-top: 100px;
-    /* background-color: yellow; */
   }
   .for_center div:nth-child(1) {
     font-size: 30px;
@@ -106,7 +79,6 @@
     height: 30px;
     font-size: 18px;
     border: none;
-    /* background-color: yellow; */
   }
   .for_center div:nth-child(3) input:focus, 
   .for_center div:nth-child(4) input:focus, 
@@ -195,7 +167,6 @@
     font-size: 18px;
     font-weight: bold;
     margin-top: 40px;
-    /* background-color: yellow; */
   }
   .address input:nth-child(2) {
     width: 80px;
@@ -220,7 +191,6 @@
   }
   .address input:nth-child(4),
   .address input:nth-child(5) {
-    /* background-color: violet; */
     margin-right: 400px;
     width: 400px;
     height: 30px;
@@ -240,20 +210,17 @@
     font-size: 20px;
     font-weight: bold;
     margin-top: 40px;
-    /* background-color: turquoise; */
   }
   .email select {
     float: right;
     font-size: 18px;
     border: none;
-    /* background-color: yellow; */
     margin-top: 10px;
     color: rgb(102, 102, 102);
   }
   .email input {
     border: none;
     width: 380px;
-    /* background-color: violet; */
     height: 40px;
     font-size: 22px;
   }
@@ -275,7 +242,6 @@
     width: 360px;
     height: 40px;
     font-size: 22px;
-    /* background-color: yellow; */
     margin-left: 10px;
   }
   .phone input:focus {
